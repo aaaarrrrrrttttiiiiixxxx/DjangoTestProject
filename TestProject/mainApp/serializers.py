@@ -1,6 +1,7 @@
+from django.core.validators import RegexValidator
 from rest_framework import serializers
 
-from mainApp.models import Product, Basket, Order, OrderItem
+from mainApp.models import Product, Basket, Order, OrderItem, User
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -37,16 +38,9 @@ class RequestBasketSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(required=False)
-    total_price = serializers.IntegerField(required=False)
-    delivery_id = serializers.IntegerField(required=False)
-    address = serializers.CharField(required=False)
-    payment_id = serializers.IntegerField(required=False)
-
     class Meta:
         model = Order
-        # fields = ['user', 'payment_id', 'address', 'delivery_id']
-        fields = '__all__'
+        fields = ['payment_id', 'address', 'delivery_id']
 
 
 class OrderItemsSerializer(serializers.ModelSerializer):
@@ -63,6 +57,31 @@ class OrderResponseSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'payment_id', 'address', 'delivery_id', 'total_price', 'order_items']
 
 
+class UserSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(required=False)
+
+    class Meta:
+        model = User
+        fields = ['username', 'phone_number']
+        extra_kwargs = {
+            'phone_number': {
+                'validators': [RegexValidator()],
+            }
+        }
 
 
+class UserResponseSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class AuthorizeResponseSerializer(serializers.Serializer):
+    need_reg = serializers.BooleanField()
+    send_otp = serializers.BooleanField()
+
+
+class OTPSerializer(serializers.Serializer):
+    otp = serializers.IntegerField()
+    phone_number = serializers.CharField()

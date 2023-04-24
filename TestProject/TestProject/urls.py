@@ -15,7 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from mainApp.views import OrderPage, ProductPage, ProductsPage, BasketPage, BasketPagePost
+from mainApp.views import OrderPage, ProductPage, ProductsPage, BasketPage, BasketPagePost, AuthorizePage, \
+    ConfirmAuthorizationPage, UserPage
 
 from rest_framework import permissions
 from django.urls import path
@@ -45,4 +46,8 @@ urlpatterns = [
     path('addToBasket/', BasketPagePost.as_view()),
     path('basket/', BasketPage.as_view()),
     path('order/', OrderPage.as_view()),
+    path('authorize/', AuthorizePage.as_view()),
+    path('confirmAuthorization/', ConfirmAuthorizationPage.as_view()),
+    path('user/', UserPage.as_view()),
+
 ]

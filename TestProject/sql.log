@@ -1,0 +1,27 @@
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-04-19 14:15:32.738896' AND "django_session"."session_key" = 'js40m9mr3jm30qpq8ql8090nd0vtr8aw') LIMIT 21; args=('2023-04-19 14:15:32.738896', 'js40m9mr3jm30qpq8ql8090nd0vtr8aw'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "mainApp_order"."id", "mainApp_order"."user", "mainApp_order"."delivery_id", "mainApp_order"."address", "mainApp_order"."payment_id", "mainApp_order"."total_price" FROM "mainApp_order" WHERE "mainApp_order"."user" = 1; args=(1,); alias=default
+(0.000) SELECT "mainApp_orderitem"."id", "mainApp_orderitem"."product_id", "mainApp_orderitem"."quantity", "mainApp_orderitem"."actual_price", "mainApp_orderitem"."order_id" FROM "mainApp_orderitem" WHERE "mainApp_orderitem"."order_id" = 1; args=(1,); alias=default
+(0.000) SELECT "mainApp_orderitem"."id", "mainApp_orderitem"."product_id", "mainApp_orderitem"."quantity", "mainApp_orderitem"."actual_price", "mainApp_orderitem"."order_id" FROM "mainApp_orderitem" WHERE "mainApp_orderitem"."order_id" = 2; args=(2,); alias=default
+(0.000) SELECT "mainApp_orderitem"."id", "mainApp_orderitem"."product_id", "mainApp_orderitem"."quantity", "mainApp_orderitem"."actual_price", "mainApp_orderitem"."order_id" FROM "mainApp_orderitem" WHERE "mainApp_orderitem"."order_id" = 3; args=(3,); alias=default
+
+
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-04-19 14:15:55.145079' AND "django_session"."session_key" = 'js40m9mr3jm30qpq8ql8090nd0vtr8aw') LIMIT 21; args=('2023-04-19 14:15:55.145079', 'js40m9mr3jm30qpq8ql8090nd0vtr8aw'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "mainApp_order"."id", "mainApp_order"."user", "mainApp_order"."delivery_id", "mainApp_order"."address", "mainApp_order"."payment_id", "mainApp_order"."total_price" FROM "mainApp_order" WHERE "mainApp_order"."user" = 1; args=(1,); alias=default
+(0.000) SELECT "mainApp_orderitem"."id", "mainApp_orderitem"."product_id", "mainApp_orderitem"."quantity", "mainApp_orderitem"."actual_price", "mainApp_orderitem"."order_id" FROM "mainApp_orderitem" WHERE "mainApp_orderitem"."order_id" IN (1, 2, 3); args=(1, 2, 3); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default

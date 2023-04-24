@@ -1,3 +1,11 @@
+import base64
+import datetime
+import os
+import random
+import secrets
+from binascii import hexlify
+
+from django.core.validators import RegexValidator
 from django.db import models
 
 
@@ -43,3 +51,17 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f'id: {self.id} product: {self.product} quantity: {self.quantity} actual_price: {self.actual_price}'
+
+
+def _create_token():
+    return base64.b64encode(secrets.token_bytes()).decode('utf8')
+
+
+class User(models.Model):
+    username = models.CharField(max_length=50)
+    phone_number_regex = RegexValidator(regex=r"^\+?1?\d{11,12}$")
+    phone_number = models.CharField(validators=[phone_number_regex], max_length=16, unique=True)
+    token = models.CharField(max_length=64, default=_create_token)
+
+    def __str__(self):
+        return f'id: {self.id} {self.username} {self.phone_number} {self.token}'
