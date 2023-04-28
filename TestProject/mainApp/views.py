@@ -5,7 +5,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from mainApp.models import Product, Basket, Order, User
+from mainApp.models import Product, Basket, Order, User, Image
 
 from mainApp.serializers import ProductSerializer, BasketSerializer, RequestBasketSerializer, OrderSerializer, \
     OrderResponseSerializer, UserSerializer, AuthorizeResponseSerializer, OTPSerializer, UserResponseSerializer
@@ -23,7 +23,7 @@ class ProductsPage(APIView):
         responses={200: ProductSerializer(many=True), 500: "Серверная ошибка"},
     )
     def get(self, request):
-        products = Product.objects.all()
+        products = Product.objects.prefetch_related('images').all()
         serializer = ProductSerializer(products, many=True)
         return JsonResponse(serializer.data, safe=False)
 
@@ -36,7 +36,7 @@ class ProductsPage(APIView):
         request_serializer = ProductSerializer(data=request.data)
         if request_serializer.is_valid():
             category = request_serializer.validated_data['category']
-            products = Product.objects.filter(category=category)
+            products = Product.objects.prefetch_related('images').filter(category=category)
             serializer = ProductSerializer(products, many=True)
             return JsonResponse(serializer.data, safe=False)
         response = Response()

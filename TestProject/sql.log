@@ -25,3 +25,31 @@
             WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
             ORDER BY name; args=None; alias=default
 (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-04-28 09:29:12.807675' AND "django_session"."session_key" = 'idv3frcg8b2pavxoxvp0d75o3kqwjh6b') LIMIT 21; args=('2023-04-28 09:29:12.807675', 'idv3frcg8b2pavxoxvp0d75o3kqwjh6b'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "mainApp_product"."id", "mainApp_product"."name", "mainApp_product"."category", "mainApp_product"."price", "mainApp_product"."description", "mainApp_product"."url" FROM "mainApp_product" WHERE "mainApp_product"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "mainApp_image"."id", "mainApp_image"."url", "mainApp_image"."product_id" FROM "mainApp_image" WHERE "mainApp_image"."product_id" = 1; args=(1,); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-04-28 09:30:03.085501' AND "django_session"."session_key" = 'idv3frcg8b2pavxoxvp0d75o3kqwjh6b') LIMIT 21; args=('2023-04-28 09:30:03.085501', 'idv3frcg8b2pavxoxvp0d75o3kqwjh6b'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "mainApp_product"."id", "mainApp_product"."name", "mainApp_product"."category", "mainApp_product"."price", "mainApp_product"."description", "mainApp_product"."url" FROM "mainApp_product"; args=(); alias=default
+(0.000) SELECT "mainApp_image"."id", "mainApp_image"."url", "mainApp_image"."product_id" FROM "mainApp_image" WHERE "mainApp_image"."product_id" IN (1, 2); args=(1, 2); alias=default
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2023-04-28 09:31:05.233944' AND "django_session"."session_key" = 'idv3frcg8b2pavxoxvp0d75o3kqwjh6b') LIMIT 21; args=('2023-04-28 09:31:05.233944', 'idv3frcg8b2pavxoxvp0d75o3kqwjh6b'); alias=default
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1 LIMIT 21; args=(1,); alias=default
+(0.000) SELECT "mainApp_product"."id", "mainApp_product"."name", "mainApp_product"."category", "mainApp_product"."price", "mainApp_product"."description", "mainApp_product"."url" FROM "mainApp_product"; args=(); alias=default
+(0.000) SELECT "mainApp_image"."id", "mainApp_image"."url", "mainApp_image"."product_id" FROM "mainApp_image" WHERE "mainApp_image"."product_id" = 1; args=(1,); alias=default
+(0.000) SELECT "mainApp_image"."id", "mainApp_image"."url", "mainApp_image"."product_id" FROM "mainApp_image" WHERE "mainApp_image"."product_id" = 2; args=(2,); alias=default

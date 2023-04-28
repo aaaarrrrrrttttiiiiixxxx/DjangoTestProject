@@ -1,7 +1,13 @@
 from django.core.validators import RegexValidator
 from rest_framework import serializers
 
-from mainApp.models import Product, Basket, Order, OrderItem, User
+from mainApp.models import Product, Basket, Order, OrderItem, User, Image
+
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields = '__all__'
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -11,10 +17,11 @@ class ProductSerializer(serializers.ModelSerializer):
     price = serializers.IntegerField(required=False)
     description = serializers.CharField(required=False)
     url = serializers.URLField(required=False)
+    images = ImageSerializer(many=True, required=False)
 
     class Meta:
         model = Product
-        fields = ['id', 'name', 'category', 'price', 'description', 'url']
+        fields = ['id', 'name', 'category', 'price', 'description', 'url', 'images']
 
 
 class BasketSerializer(serializers.ModelSerializer):

@@ -1,9 +1,5 @@
 import base64
-import datetime
-import os
-import random
 import secrets
-from binascii import hexlify
 
 from django.core.validators import RegexValidator
 from django.db import models
@@ -65,3 +61,11 @@ class User(models.Model):
 
     def __str__(self):
         return f'id: {self.id} {self.username} {self.phone_number} {self.token}'
+
+
+class Image(models.Model):
+    url = models.URLField()
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+
+    def __str__(self):
+        return f'id: {self.id} url: {self.url}'

@@ -64,7 +64,6 @@ class AuthorizationService:
         user = User.objects.filter(phone_number=self.data['phone_number'])
         return AuthorizeResponseSerializer({'send_otp': user, 'need_reg': not user})
 
-
     def create_user(self):
         user, created = User.objects.get_or_create(phone_number=self.data['phone_number'])
         user.username = self.data['username']
